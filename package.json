@@ -1,0 +1,24 @@
+{
+  "name": "htmlchecker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "bulk-require": "^1.0.1",
+    "cheerio": "^1.0.0-rc.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2"
+  },
+  "scripts": {
+    "test": "mocha",
+    "coverage": "nyc mocha --timeout 1000"
+  },
+  "author": "LarryNung",
+  "license": "ISC"
+}
