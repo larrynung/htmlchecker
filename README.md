@@ -1,4 +1,4 @@
-htmlchecker
+simplehtmlchecker
 ================
 A simple HTML checker
 
