@@ -34,7 +34,7 @@ describe('Development Requirement', function(){
         ).to.be.equal(true);
     });
     it('User can define and use their own rules easily', function(){
-        var aTagShouldHaveHrefAttributeRule = new Rule('ATagShouldHaveHrefAttributeRule', 'a:not([href])', function(length) { return 'There are ' + length + ' <a> tag without href attribute.'; });
+        let aTagShouldHaveHrefAttributeRule = new Rule('ATagShouldHaveHrefAttributeRule', 'a:not([href])', function(length) { return 'There are ' + length + ' <a> tag without href attribute.'; });
         expect(
             checker
             .input(InputType.Text, "<a href=''/>")
@@ -49,7 +49,7 @@ describe('Development Requirement', function(){
         ).to.be.equal(false);
     });
     it('The input can be a HTML file (User is able to config the output destination)', function(){
-        var file = path.join(__dirname, 'input', 'input.html');
+        let file = path.join(__dirname, 'input', 'input.html');
         expect(
             checker
             .input(InputType.File, file)
@@ -58,7 +58,7 @@ describe('Development Requirement', function(){
     });
     it('The input can be Node Readable Stream');
     it('The output can be a file (User is able to config the output destination)', function(){
-        var file = path.join(__dirname, 'output', 'output.txt');
+        let file = path.join(__dirname, 'output', 'output.txt');
         if (fs.existsSync(file)) {
             fs.unlinkSync(file);
         }
@@ -69,15 +69,15 @@ describe('Development Requirement', function(){
         expect(fs.existsSync(file)).to.be.equal(true);
     });
     it('The output can be Node Writable Stream', function(){
-        var folderPath = path.join(__dirname, 'output');
+        let folderPath = path.join(__dirname, 'output');
         if (!fs.existsSync(folderPath)){
             fs.mkdirSync(folderPath);
         }
-        var file = path.join(folderPath, 'output.txt');
+        let file = path.join(folderPath, 'output.txt');
         if (fs.existsSync(file)) {
             fs.unlinkSync(file);
         }
-        var stream = fs.createWriteStream(file);
+        let stream = fs.createWriteStream(file);
         checker
         .input(InputType.Text, "<head><title></title><meta name='descriptions'/><meta name='keywords'/></head><img/>")
         .output(OutputType.Stream, stream)
@@ -91,7 +91,7 @@ describe('Development Requirement', function(){
         .check();
     });
     it('When we want to implement additional rules for <meta> tag, The code changes should be small. Ex: Checking <meta name=“robots” /> existing or not?!', function(){
-        var headTagShouldHaveMetaTagWithRobotsRule = new HeadTagShouldHaveMetaTagRule('HeadTagShouldHaveMetaTagWithRobotsRule', 'robots', 'This HTML without <meta name="robots" .../> tag.');
+        let headTagShouldHaveMetaTagWithRobotsRule = new HeadTagShouldHaveMetaTagRule('HeadTagShouldHaveMetaTagWithRobotsRule', 'robots', 'This HTML without <meta name="robots" .../> tag.');
         expect(
             checker
             .input(InputType.Text, "<head><meta name='robots'/></head>")
