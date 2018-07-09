@@ -1,8 +1,8 @@
 {
   "name": "simplehtmlchecker",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
+  "version": "1.0.1",
+  "description": "A simple html check tool",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
@@ -21,8 +21,13 @@
     "lint": "eslint lib/**/*.js",
     "test": "node_modules/mocha/bin/_mocha",
     "coverage": "nyc mocha --timeout 1000",
-    "build": "parcel build index.js"
+    "build": "NODE_ENV=production parcel build index.js --public-url ./dist/ --target node --no-source-maps"
   },
   "author": "LarryNung",
-  "license": "ISC"
+  "license": "MIT",
+  "homepage": "https://github.com/larrynung/simplehtmlchecker#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larrynung/simplehtmlchecker.git"
+  }
 }
