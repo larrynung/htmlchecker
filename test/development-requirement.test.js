@@ -13,8 +13,8 @@ describe('Development Requirement', function () {
         checker.registeredRules.ImgTagShouldHaveAltAttributeRule.isActive = false;
         checker
             .input(InputType.Text, "<head><title></title><meta name='descriptions'/><meta name='keywords'/></head><img/>")
-            .check(function (result) {
-                expect(result).to.be.equal(true);
+            .check(function (result, messages) {
+                expect(result).to.be.equal(false);
             });
         checker
             .input(InputType.Text, "<head><title></title><meta name='descriptions'/><meta name='keywords'/></head><img alt='value'/>")
@@ -58,7 +58,15 @@ describe('Development Requirement', function () {
                 expect(result).to.be.equal(true);
             });
     });
-    it('The input can be Node Readable Stream');
+    it('The input can be Node Readable Stream', function () {
+        let file = path.join(__dirname, 'input', 'input.html');
+        let stream = fs.createReadStream(file);
+        checker
+            .input(InputType.Stream, stream)
+            .check(function (result) {
+                expect(result).to.be.equal(true);
+            });
+    });
     it('The output can be a file (User is able to config the output destination)', function () {
         let file = path.join(__dirname, 'output', 'output.txt');
         if (fs.existsSync(file)) {
@@ -91,7 +99,7 @@ describe('Development Requirement', function () {
             .input(InputType.Text, "<head><title></title><meta name='descriptions'/><meta name='keywords'/></head><img/>")
             .output(OutputType.Console)
             .check(function (result) {
-                expect(result).to.be.equal(true);
+                expect(result).to.be.equal(false);
             });
     });
     it('When we want to implement additional rules for <meta> tag, The code changes should be small. Ex: Checking <meta name=“robots” /> existing or not?!', function () {
