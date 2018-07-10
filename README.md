@@ -20,7 +20,6 @@ checker
 ## Check analyze result
 ```js
 ...
-var checker = new Checker();
 checker
 .input(InputType.Text, "<html></html>")
 .output(OutputType.Console)
@@ -32,7 +31,6 @@ checker
 ## Set rule's params
 ```js
 ...
-var checker = new Checker();
 checker.registeredRules.MoreThanNStrongTagRule.params.maxStrongTagCount = 15;
 checker
 .input(InputType.Text, "<html></html>")
@@ -43,7 +41,6 @@ checker
 ## Set rule's active status
 ```js
 ...
-var checker = new Checker();
 checker.registeredRules.ImgTagShouldHaveAltAttributeRule.isActive = false;
 checker
 .input(InputType.Text, "<html></html>")
@@ -71,7 +68,6 @@ var aTagShouldHaveHrefAttributeRule = new Rule('ATagShouldHaveHrefAttributeRule'
 ## Register custom rule
 ```js
 ...
-var checker = new Checker();
 checker.registerRules([ATagShuldHaveHrefAttributeRule]);
 checker
 .input(InputType.Text, "<html></html>")
@@ -82,7 +78,6 @@ checker
 ## Use custom rule
 ```js
 ...
-var checker = new Checker();
 checker
 .input(InputType.Text, "<html></html>")
 .output(OutputType.Console)
