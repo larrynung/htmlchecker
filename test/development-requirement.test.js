@@ -91,8 +91,9 @@ describe('Development Requirement', function () {
         checker
             .input(InputType.Text, "<head><title></title><meta name='descriptions'/><meta name='keywords'/></head><img/>")
             .output(OutputType.Stream, stream)
-            .check();
-        expect(fs.existsSync(file)).to.be.equal(true);
+            .check(function () {
+                expect(fs.existsSync(file)).to.be.equal(true);
+            });
     });
     it('The output can be Console', function () {
         checker
