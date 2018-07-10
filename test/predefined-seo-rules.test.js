@@ -8,7 +8,7 @@ const checker = new Checker();
 describe('Pre-defined SEO rules', function () {
     it('Detect if any <img/> tag without alt attribute', function () {
         checker
-            .input(InputType.Text, "<head><title></title><meta name='descriptions'/><meta name='keywords'/></head><img/>")
+            .input(InputType.Text, "<html></html>")
             .check(function (result) {
                 expect(result).to.be.equal(false);
             });
