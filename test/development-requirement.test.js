@@ -4,8 +4,7 @@ const fs = require('fs');
 const expect = require('chai').expect;
 const path = require('path');
 const HeadTagShouldHaveMetaTagRule = require('../lib/Rules/HeadTagShouldHaveMetaTagRule');
-const Rule = require('../lib/Rule');
-const { Checker, InputType, OutputType } = require('../lib/checker');
+const { Checker, InputType, OutputType, Rule } = require('../lib/checker');
 const checker = new Checker();
 
 describe('Development Requirement', function () {
