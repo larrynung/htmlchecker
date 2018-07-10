@@ -2,6 +2,8 @@ simplehtmlchecker
 ================
 A simple HTML checker
 
+<img src="https://github.com/larrynung/simplehtmlchecker/blob/master/image/StreamFlow.png?raw=true">
+
 ## Installation
 `npm install eslint -g`
 
