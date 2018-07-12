@@ -6,7 +6,7 @@ A simple HTML checker
 <img src="https://github.com/larrynung/simplehtmlchecker/blob/master/image/ClassDiagram.png?raw=true">
 
 ## Installation
-`npm install eslint -g`
+`npm i simplehtmlchecker`
 
 ## Getting started
 ```js
