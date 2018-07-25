@@ -1,3 +1,6 @@
+[![maintanability](https://sonarcloud.io/api/project_badges/measure?project=simplehtmlchecker&metric=sqale_rating)](https://sonarcloud.io/api/project_badges/measure?project=simplehtmlchecker&metric=sqale_rating)
+[![code smells](https://sonarcloud.io/api/project_badges/measure?project=simplehtmlchecker&metric=code_smells)](https://sonarcloud.io/api/project_badges/measure?project=simplehtmlchecker&metric=code_smells)
+
 simplehtmlchecker
 ================
 A simple HTML checker
